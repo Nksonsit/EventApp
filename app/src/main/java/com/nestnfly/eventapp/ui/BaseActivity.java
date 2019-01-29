@@ -11,10 +11,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.nestnfly.eventapp.R;
 import com.nestnfly.eventapp.custom.TfTextView;
@@ -113,26 +115,20 @@ public class BaseActivity extends AppCompatActivity {
         } else {
             if (!((BaseFragment) fragmentBackStack.get(fragmentBackStack.size() - 1)).onFragmentBackPress()) {
                 Fragment currentFragment = fragmentBackStack.get(fragmentBackStack.size() - 1);
-/*                if (currentFragment instanceof NULMFragment) {
+                if (currentFragment instanceof HomeFragment) {
 //                    doubleTapOnBackPress();
                     finish();
                 } else {
                     popFragments(false);
-                    if (fragmentBackStack.get(fragmentBackStack.size() - 1) instanceof NULMFragment) {
-                        updateBottomUI(1);
-
-                    } else if (fragmentBackStack.get(fragmentBackStack.size() - 1) instanceof SBMFragment) {
-                        updateBottomUI(2);
-
-                    } else if (fragmentBackStack.get(fragmentBackStack.size() - 1) instanceof VideoDownloadsFragment) {
-                        updateBottomUI(3);
-
-                    } else if (fragmentBackStack.get(fragmentBackStack.size() - 1) instanceof ProfileFragment) {
-                        updateBottomUI(4);
-
+                    if (fragmentBackStack.get(fragmentBackStack.size() - 1) instanceof HostFragment) {
+                        loadBottomUI(1);
+                    } else if (fragmentBackStack.get(fragmentBackStack.size() - 1) instanceof ScheduleFragment) {
+                        loadBottomUI(1);
+                    } else if (fragmentBackStack.get(fragmentBackStack.size() - 1) instanceof ContactUsFragment) {
+                        loadBottomUI(1);
                     }
 
-                }*/
+                }
 
             }
         }
@@ -184,11 +180,39 @@ public class BaseActivity extends AppCompatActivity {
     }*/
     public void loadBottomUI(int selectedPosition) {
         switch (selectedPosition) {
+            case 0:
+
+                ((RelativeLayout) findViewById(R.id.llRegister)).setVisibility(View.VISIBLE);
+
+                ((TfTextView) findViewById(R.id.txtHome)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
+                ((TfTextView) findViewById(R.id.txtHost)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
+                ((TfTextView) findViewById(R.id.txtSchedule)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
+                ((TfTextView) findViewById(R.id.txtContactUs)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
+
+                ((ImageView) findViewById(R.id.imgHome)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.inactive), android.graphics.PorterDuff.Mode.MULTIPLY);
+                ((ImageView) findViewById(R.id.imgHost)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.inactive), android.graphics.PorterDuff.Mode.MULTIPLY);
+                ((ImageView) findViewById(R.id.imgSchedule)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.inactive), android.graphics.PorterDuff.Mode.MULTIPLY);
+                ((ImageView) findViewById(R.id.imgContactUs)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.inactive), android.graphics.PorterDuff.Mode.MULTIPLY);
+
+                ((LinearLayout) findViewById(R.id.llHome)).setEnabled(false);
+                ((LinearLayout) findViewById(R.id.llHost)).setEnabled(false);
+                ((LinearLayout) findViewById(R.id.llSchedule)).setEnabled(false);
+                ((LinearLayout) findViewById(R.id.llContactUs)).setEnabled(false);
+
+//                ((TfTextView) findViewById(R.id.txtTitle)).setText("Home");
+                break;
             case 1:
+                ((RelativeLayout) findViewById(R.id.llRegister)).setVisibility(View.GONE);
+
                 ((TfTextView) findViewById(R.id.txtHome)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
                 ((TfTextView) findViewById(R.id.txtHost)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
                 ((TfTextView) findViewById(R.id.txtSchedule)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
                 ((TfTextView) findViewById(R.id.txtContactUs)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
+
+                ((ImageView) findViewById(R.id.imgHome)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.white), android.graphics.PorterDuff.Mode.MULTIPLY);
+                ((ImageView) findViewById(R.id.imgHost)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.inactive), android.graphics.PorterDuff.Mode.MULTIPLY);
+                ((ImageView) findViewById(R.id.imgSchedule)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.inactive), android.graphics.PorterDuff.Mode.MULTIPLY);
+                ((ImageView) findViewById(R.id.imgContactUs)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.inactive), android.graphics.PorterDuff.Mode.MULTIPLY);
 
                 ((LinearLayout) findViewById(R.id.llHome)).setEnabled(false);
                 ((LinearLayout) findViewById(R.id.llHost)).setEnabled(true);
@@ -201,6 +225,12 @@ public class BaseActivity extends AppCompatActivity {
                 pushAddFragments(new HomeFragment(BaseActivity.this));
                 break;
             case 2:
+                ((RelativeLayout) findViewById(R.id.llRegister)).setVisibility(View.GONE);
+
+                ((ImageView) findViewById(R.id.imgHome)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.inactive), android.graphics.PorterDuff.Mode.MULTIPLY);
+                ((ImageView) findViewById(R.id.imgHost)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.white), android.graphics.PorterDuff.Mode.MULTIPLY);
+                ((ImageView) findViewById(R.id.imgSchedule)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.inactive), android.graphics.PorterDuff.Mode.MULTIPLY);
+                ((ImageView) findViewById(R.id.imgContactUs)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.inactive), android.graphics.PorterDuff.Mode.MULTIPLY);
 
                 ((TfTextView) findViewById(R.id.txtHome)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
                 ((TfTextView) findViewById(R.id.txtHost)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
@@ -218,6 +248,12 @@ public class BaseActivity extends AppCompatActivity {
                 pushAddFragments(new HostFragment(BaseActivity.this));
                 break;
             case 3:
+                ((RelativeLayout) findViewById(R.id.llRegister)).setVisibility(View.GONE);
+
+                ((ImageView) findViewById(R.id.imgHome)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.inactive), android.graphics.PorterDuff.Mode.MULTIPLY);
+                ((ImageView) findViewById(R.id.imgHost)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.inactive), android.graphics.PorterDuff.Mode.MULTIPLY);
+                ((ImageView) findViewById(R.id.imgSchedule)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.white), android.graphics.PorterDuff.Mode.MULTIPLY);
+                ((ImageView) findViewById(R.id.imgContactUs)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.inactive), android.graphics.PorterDuff.Mode.MULTIPLY);
 
                 ((TfTextView) findViewById(R.id.txtHome)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
                 ((TfTextView) findViewById(R.id.txtHost)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
@@ -235,6 +271,12 @@ public class BaseActivity extends AppCompatActivity {
                 pushAddFragments(new ScheduleFragment(BaseActivity.this));
                 break;
             case 4:
+                ((RelativeLayout) findViewById(R.id.llRegister)).setVisibility(View.GONE);
+
+                ((ImageView) findViewById(R.id.imgHome)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.inactive), android.graphics.PorterDuff.Mode.MULTIPLY);
+                ((ImageView) findViewById(R.id.imgHost)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.inactive), android.graphics.PorterDuff.Mode.MULTIPLY);
+                ((ImageView) findViewById(R.id.imgSchedule)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.inactive), android.graphics.PorterDuff.Mode.MULTIPLY);
+                ((ImageView) findViewById(R.id.imgContactUs)).setColorFilter(ContextCompat.getColor(BaseActivity.this, R.color.white), android.graphics.PorterDuff.Mode.MULTIPLY);
 
                 ((TfTextView) findViewById(R.id.txtHome)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
                 ((TfTextView) findViewById(R.id.txtHost)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));

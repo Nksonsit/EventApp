@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/dimen_16dp"
+    android:paddingRight="@dimen/dimen_16dp"
+    android:orientation="vertical">
 
-</RelativeLayout>
+    <com.nestnfly.eventapp.custom.TfTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="09"
+        android:textColor="@color/dark_orange"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:paddingLeft="@dimen/dimen_8dp"
+        app:isBold="true" />
+
+    <com.nestnfly.eventapp.custom.TfTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="February"
+        android:paddingLeft="@dimen/dimen_8dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/S_TEXT" />
+
+    <com.nestnfly.eventapp.custom.TfTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2019"
+        android:paddingLeft="@dimen/dimen_8dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/S_TEXT" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvSchedule"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:paddingLeft="@dimen/dimen_8dp"
+        android:paddingRight="@dimen/dimen_8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+
+    <View
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="102dp"/>
+</LinearLayout>

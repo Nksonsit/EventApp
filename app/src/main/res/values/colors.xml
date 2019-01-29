@@ -3,7 +3,7 @@
     <color name="colorPrimary">#475462</color>
     <color name="colorPrimaryDark">#28313C</color>
     <!--<color name="colorPrimaryDark">#393a72</color>-->
-    <color name="colorAccent">#000000</color>
+    <color name="colorAccent">#8DC63F</color>
 
     <color name="yellow">#FFE400</color>
     <color name="green">#8DC63F</color>
@@ -26,12 +26,13 @@
     <color name="colorWarning">#FFA726</color>
     <color name="colorError">#EF5350</color>
     <color name="orange">#FF9338</color>
+    <color name="dark_orange">#E96221</color>
 
     <color name="transparent">#00FFFFFF</color>
     <color name="white">#ffffff</color>
     <color name="offwhite">#F3F3F3</color>
     <color name="darkColor">#323232</color>
-    <color name="lightGray">#989898</color>
+    <color name="lightGray">#A0AAB2</color>
     <color name="gray">#E1E1E1</color>
     <color name="darkGray">#6b6a6a</color>
 

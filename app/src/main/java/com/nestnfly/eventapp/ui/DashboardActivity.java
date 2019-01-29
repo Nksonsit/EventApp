@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.nestnfly.eventapp.R;
 import com.nestnfly.eventapp.custom.TfTextView;
@@ -24,6 +25,9 @@ public class DashboardActivity extends BaseActivity {
     private TfTextView txtContactUs;
     private LinearLayout llContactUs;
     private LinearLayout llLoginRegister;
+    private ImageView imgRegister;
+    private ImageView imgCancel;
+    private RelativeLayout llRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,13 +74,30 @@ public class DashboardActivity extends BaseActivity {
         txtSchedule = (TfTextView) findViewById(R.id.txtSchedule);
         imgSchedule = (ImageView) findViewById(R.id.imgSchedule);
         llHost = (LinearLayout) findViewById(R.id.llHost);
+        llRegister= (RelativeLayout) findViewById(R.id.llRegister);
         txtHost = (TfTextView) findViewById(R.id.txtHost);
         imgHost = (ImageView) findViewById(R.id.imgHost);
         llHome = (LinearLayout) findViewById(R.id.llHome);
         txtHome = (TfTextView) findViewById(R.id.txtHome);
         imgHome = (ImageView) findViewById(R.id.imgHome);
+        imgRegister = (ImageView) findViewById(R.id.imgRegister);
+        imgCancel = (ImageView) findViewById(R.id.imgCancel);
         container = (LinearLayout) findViewById(R.id.container);
 
         loadBottomUI(1);
+
+
+        imgRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadBottomUI(0);
+            }
+        });
+        imgCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadBottomUI(CURRENT_FRAGMENT+1);
+            }
+        });
     }
 }

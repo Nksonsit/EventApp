@@ -61,7 +61,7 @@
             <com.nestnfly.eventapp.custom.TfTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fabian Cousley"
+                android:text="Steaven Agee"
                 android:textColor="@color/black"
                 android:textSize="@dimen/L_TEXT" />
 
@@ -69,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/c_c"
+                android:text="Fi Interactive"
                 android:textSize="@dimen/S_TEXT" />
 
         </LinearLayout>
@@ -111,7 +111,7 @@
             <com.nestnfly.eventapp.custom.TfTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fabian Cousley"
+                android:text="Nabil Mensah"
                 android:textColor="@color/black"
                 android:textSize="@dimen/L_TEXT" />
 
@@ -119,7 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/c_c"
+                android:text="Tasttlig Corporation"
                 android:textSize="@dimen/S_TEXT" />
 
         </LinearLayout>
@@ -143,7 +143,7 @@
             <com.nestnfly.eventapp.custom.TfTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fabian Cousley"
+                android:text="Marlon Stephen"
                 android:textColor="@color/black"
                 android:textSize="@dimen/L_TEXT" />
 
@@ -151,7 +151,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/c_c"
+                android:text="KPDI Ventures"
                 android:textSize="@dimen/S_TEXT" />
 
         </LinearLayout>
@@ -192,7 +192,7 @@
             <com.nestnfly.eventapp.custom.TfTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fabian Cousley"
+                android:text="Aures Tchana"
                 android:textColor="@color/black"
                 android:textSize="@dimen/L_TEXT" />
 
@@ -200,7 +200,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/c_c"
+                android:text="Loopsight Company Inc."
                 android:textSize="@dimen/S_TEXT" />
 
         </LinearLayout>
