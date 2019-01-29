@@ -15,7 +15,7 @@
             android:layout_height="@dimen/dimen_72dp"
             android:layout_marginLeft="@dimen/dimen_16dp"
             android:layout_marginRight="@dimen/dimen_16dp"
-            android:src="@mipmap/ic_launcher_round" />
+            android:src="@drawable/img1" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -81,7 +81,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginLeft="@dimen/dimen_16dp"
             android:layout_marginRight="@dimen/dimen_16dp"
-            android:src="@mipmap/ic_launcher_round" />
+            android:src="@drawable/img2" />
 
     </RelativeLayout>
 
@@ -97,7 +97,7 @@
             android:layout_height="@dimen/dimen_72dp"
             android:layout_marginLeft="@dimen/dimen_16dp"
             android:layout_marginRight="@dimen/dimen_16dp"
-            android:src="@mipmap/ic_launcher_round" />
+            android:src="@drawable/img3" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -163,7 +163,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginLeft="@dimen/dimen_16dp"
             android:layout_marginRight="@dimen/dimen_16dp"
-            android:src="@mipmap/ic_launcher_round" />
+            android:src="@drawable/img4" />
 
     </RelativeLayout>
 
@@ -178,7 +178,7 @@
             android:layout_height="@dimen/dimen_72dp"
             android:layout_marginLeft="@dimen/dimen_16dp"
             android:layout_marginRight="@dimen/dimen_16dp"
-            android:src="@mipmap/ic_launcher_round" />
+            android:src="@drawable/img5" />
 
         <LinearLayout
             android:layout_width="wrap_content"

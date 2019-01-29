@@ -251,6 +251,34 @@ public class Functions {
                 .apply(options)
                 .into(imageView);
     }
+    public static void loadCircularImage(BaseActivity context, int drawable, final ImageView imageView, final ProgressBar progressBar) {
+        RequestOptions options = new RequestOptions()
+                .centerCrop()
+                .circleCropTransform()
+                .placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.ic_launcher);
+        Glide.with(context)
+                .load(drawable)
+                .listener(new RequestListener<Drawable>() {
+                    @Override
+                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+                        if (progressBar != null)
+                            progressBar.setVisibility(View.GONE);
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                        if (progressBar != null)
+                            progressBar.setVisibility(View.GONE);
+                        return false;
+                    }
+                })
+                .apply(options)
+                .into(imageView);
+    }
 
     public static void loadCircularImage(BaseActivity context, Bitmap bitmap, final ImageView imageView, final ProgressBar progressBar) {
         RequestOptions options = new RequestOptions()
