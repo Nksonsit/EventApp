@@ -8,13 +8,21 @@ import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.nestnfly.eventapp.R;
+import com.nestnfly.eventapp.custom.TfTextView;
 import com.nestnfly.eventapp.fragment.BaseFragment;
+import com.nestnfly.eventapp.fragment.ContactUsFragment;
+import com.nestnfly.eventapp.fragment.HomeFragment;
+import com.nestnfly.eventapp.fragment.HostFragment;
+import com.nestnfly.eventapp.fragment.ScheduleFragment;
 import com.nestnfly.eventapp.helper.ProgressBarHelper;
 
 import java.util.Stack;
@@ -175,126 +183,76 @@ public class BaseActivity extends AppCompatActivity {
         pushAddFragments(fragmentToPush, true, true);
     }*/
     public void loadBottomUI(int selectedPosition) {
-        /*switch (selectedPosition) {
+        switch (selectedPosition) {
             case 1:
-                ((ImageView) findViewById(R.id.imgNulm)).setImageResource(R.drawable.nulm_selected);
-                ((ImageView) findViewById(R.id.imgSbm)).setImageResource(R.drawable.swacch_bharat);
-                ((ImageView) findViewById(R.id.imgDownload)).setImageResource(R.drawable.download);
-                ((ImageView) findViewById(R.id.imgProfile)).setImageResource(R.drawable.profile);
+                ((TfTextView) findViewById(R.id.txtHome)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
+                ((TfTextView) findViewById(R.id.txtHost)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
+                ((TfTextView) findViewById(R.id.txtSchedule)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
+                ((TfTextView) findViewById(R.id.txtContactUs)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
 
-                ((TfTextView) findViewById(R.id.txtNulm)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
-                ((TfTextView) findViewById(R.id.txtSbm)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.colorPrimary));
-                ((TfTextView) findViewById(R.id.txtDownload)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.colorPrimary));
-                ((TfTextView) findViewById(R.id.txtProfile)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.colorPrimary));
+                ((LinearLayout) findViewById(R.id.llHome)).setEnabled(false);
+                ((LinearLayout) findViewById(R.id.llHost)).setEnabled(true);
+                ((LinearLayout) findViewById(R.id.llSchedule)).setEnabled(true);
+                ((LinearLayout) findViewById(R.id.llContactUs)).setEnabled(true);
 
-                ((LinearLayout) findViewById(R.id.llNulm)).setEnabled(false);
-                ((LinearLayout) findViewById(R.id.llSbm)).setEnabled(true);
-                ((LinearLayout) findViewById(R.id.llDownload)).setEnabled(true);
-                ((LinearLayout) findViewById(R.id.llProfile)).setEnabled(true);
-
-
-                ((LinearLayout) findViewById(R.id.llNulm)).setBackgroundColor(ContextCompat.getColor(BaseActivity.this, R.color.colorPrimary));
-                ((LinearLayout) findViewById(R.id.llSbm)).setBackgroundColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
-                ((LinearLayout) findViewById(R.id.llDownload)).setBackgroundColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
-                ((LinearLayout) findViewById(R.id.llProfile)).setBackgroundColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
-
-                ((ImageView) findViewById(R.id.imgSearch)).setVisibility(View.VISIBLE);
-                ((TfTextView) findViewById(R.id.txtTitle)).setText(PrefUtils.getLanguageObj(BaseActivity.this).getDay_nulm());
-                ((TfTextView) findViewById(R.id.txtTitle)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.yellow));
+//                ((TfTextView) findViewById(R.id.txtTitle)).setText("Home");
 
                 CURRENT_FRAGMENT = 0;
-                pushAddFragments(new NULMFragment(BaseActivity.this), false, false);
+                pushAddFragments(new HomeFragment(BaseActivity.this));
                 break;
             case 2:
-                ((ImageView) findViewById(R.id.imgNulm)).setImageResource(R.drawable.nulm);
-                ((ImageView) findViewById(R.id.imgSbm)).setImageResource(R.drawable.swacch_bharat_selected);
-                ((ImageView) findViewById(R.id.imgDownload)).setImageResource(R.drawable.download);
-                ((ImageView) findViewById(R.id.imgProfile)).setImageResource(R.drawable.profile);
 
-                ((TfTextView) findViewById(R.id.txtNulm)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.colorPrimary));
-                ((TfTextView) findViewById(R.id.txtSbm)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
-                ((TfTextView) findViewById(R.id.txtDownload)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.colorPrimary));
-                ((TfTextView) findViewById(R.id.txtProfile)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.colorPrimary));
+                ((TfTextView) findViewById(R.id.txtHome)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
+                ((TfTextView) findViewById(R.id.txtHost)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
+                ((TfTextView) findViewById(R.id.txtSchedule)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
+                ((TfTextView) findViewById(R.id.txtContactUs)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
 
-                ((LinearLayout) findViewById(R.id.llNulm)).setEnabled(true);
-                ((LinearLayout) findViewById(R.id.llSbm)).setEnabled(false);
-                ((LinearLayout) findViewById(R.id.llDownload)).setEnabled(true);
-                ((LinearLayout) findViewById(R.id.llProfile)).setEnabled(true);
+                ((LinearLayout) findViewById(R.id.llHome)).setEnabled(true);
+                ((LinearLayout) findViewById(R.id.llHost)).setEnabled(false);
+                ((LinearLayout) findViewById(R.id.llSchedule)).setEnabled(true);
+                ((LinearLayout) findViewById(R.id.llContactUs)).setEnabled(true);
 
-
-                ((LinearLayout) findViewById(R.id.llNulm)).setBackgroundColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
-                ((LinearLayout) findViewById(R.id.llSbm)).setBackgroundColor(ContextCompat.getColor(BaseActivity.this, R.color.colorPrimary));
-                ((LinearLayout) findViewById(R.id.llDownload)).setBackgroundColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
-                ((LinearLayout) findViewById(R.id.llProfile)).setBackgroundColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
-
-                ((ImageView) findViewById(R.id.imgSearch)).setVisibility(View.VISIBLE);
-                ((TfTextView) findViewById(R.id.txtTitle)).setText(PrefUtils.getLanguageObj(BaseActivity.this).getSbm());
-                ((TfTextView) findViewById(R.id.txtTitle)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.yellow));
+//                ((TfTextView) findViewById(R.id.txtTitle)).setText(PrefUtils.getLanguageObj(BaseActivity.this).getSbm());
 
                 CURRENT_FRAGMENT = 1;
-                pushAddFragments(new SBMFragment(BaseActivity.this), false, false);
+                pushAddFragments(new HostFragment(BaseActivity.this));
                 break;
             case 3:
 
-                ((ImageView) findViewById(R.id.imgNulm)).setImageResource(R.drawable.nulm);
-                ((ImageView) findViewById(R.id.imgSbm)).setImageResource(R.drawable.swacch_bharat);
-                ((ImageView) findViewById(R.id.imgDownload)).setImageResource(R.drawable.download_selected);
-                ((ImageView) findViewById(R.id.imgProfile)).setImageResource(R.drawable.profile);
+                ((TfTextView) findViewById(R.id.txtHome)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
+                ((TfTextView) findViewById(R.id.txtHost)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
+                ((TfTextView) findViewById(R.id.txtSchedule)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
+                ((TfTextView) findViewById(R.id.txtContactUs)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
 
-                ((TfTextView) findViewById(R.id.txtNulm)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.colorPrimary));
-                ((TfTextView) findViewById(R.id.txtSbm)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.colorPrimary));
-                ((TfTextView) findViewById(R.id.txtDownload)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
-                ((TfTextView) findViewById(R.id.txtProfile)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.colorPrimary));
-
-                ((LinearLayout) findViewById(R.id.llNulm)).setEnabled(true);
-                ((LinearLayout) findViewById(R.id.llSbm)).setEnabled(true);
-                ((LinearLayout) findViewById(R.id.llDownload)).setEnabled(false);
-                ((LinearLayout) findViewById(R.id.llProfile)).setEnabled(true);
-
-
-                ((LinearLayout) findViewById(R.id.llNulm)).setBackgroundColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
-                ((LinearLayout) findViewById(R.id.llSbm)).setBackgroundColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
-                ((LinearLayout) findViewById(R.id.llDownload)).setBackgroundColor(ContextCompat.getColor(BaseActivity.this, R.color.colorPrimary));
-                ((LinearLayout) findViewById(R.id.llProfile)).setBackgroundColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
+                ((LinearLayout) findViewById(R.id.llHome)).setEnabled(true);
+                ((LinearLayout) findViewById(R.id.llHost)).setEnabled(true);
+                ((LinearLayout) findViewById(R.id.llSchedule)).setEnabled(false);
+                ((LinearLayout) findViewById(R.id.llContactUs)).setEnabled(true);
 
                 CURRENT_FRAGMENT = 2;
-                ((ImageView) findViewById(R.id.imgSearch)).setVisibility(View.GONE);
-                ((TfTextView) findViewById(R.id.txtTitle)).setText(PrefUtils.getLanguageObj(BaseActivity.this).getMy_downloads());
-                ((TfTextView) findViewById(R.id.txtTitle)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.yellow));
+//                ((TfTextView) findViewById(R.id.txtTitle)).setText(PrefUtils.getLanguageObj(BaseActivity.this).getMy_downloads());
 
-                pushAddFragments(new DownloadFragment(BaseActivity.this), false, false);
+                pushAddFragments(new ScheduleFragment(BaseActivity.this));
                 break;
             case 4:
-                ((ImageView) findViewById(R.id.imgNulm)).setImageResource(R.drawable.nulm);
-                ((ImageView) findViewById(R.id.imgSbm)).setImageResource(R.drawable.swacch_bharat);
-                ((ImageView) findViewById(R.id.imgDownload)).setImageResource(R.drawable.download);
-                ((ImageView) findViewById(R.id.imgProfile)).setImageResource(R.drawable.profile_selected);
 
-                ((TfTextView) findViewById(R.id.txtNulm)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.colorPrimary));
-                ((TfTextView) findViewById(R.id.txtSbm)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.colorPrimary));
-                ((TfTextView) findViewById(R.id.txtDownload)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.colorPrimary));
-                ((TfTextView) findViewById(R.id.txtProfile)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
+                ((TfTextView) findViewById(R.id.txtHome)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
+                ((TfTextView) findViewById(R.id.txtHost)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
+                ((TfTextView) findViewById(R.id.txtSchedule)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.inactive));
+                ((TfTextView) findViewById(R.id.txtContactUs)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
 
-                ((LinearLayout) findViewById(R.id.llNulm)).setEnabled(true);
-                ((LinearLayout) findViewById(R.id.llSbm)).setEnabled(true);
-                ((LinearLayout) findViewById(R.id.llDownload)).setEnabled(true);
-                ((LinearLayout) findViewById(R.id.llProfile)).setEnabled(false);
-
-
-                ((LinearLayout) findViewById(R.id.llNulm)).setBackgroundColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
-                ((LinearLayout) findViewById(R.id.llSbm)).setBackgroundColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
-                ((LinearLayout) findViewById(R.id.llDownload)).setBackgroundColor(ContextCompat.getColor(BaseActivity.this, R.color.white));
-                ((LinearLayout) findViewById(R.id.llProfile)).setBackgroundColor(ContextCompat.getColor(BaseActivity.this, R.color.colorPrimary));
+                ((LinearLayout) findViewById(R.id.llHome)).setEnabled(true);
+                ((LinearLayout) findViewById(R.id.llHost)).setEnabled(true);
+                ((LinearLayout) findViewById(R.id.llSchedule)).setEnabled(true);
+                ((LinearLayout) findViewById(R.id.llContactUs)).setEnabled(false);
 
                 CURRENT_FRAGMENT = 3;
-                ((ImageView) findViewById(R.id.imgSearch)).setVisibility(View.GONE);
-                ((TfTextView) findViewById(R.id.txtTitle)).setText(PrefUtils.getLanguageObj(BaseActivity.this).getProfile());
-                ((TfTextView) findViewById(R.id.txtTitle)).setTextColor(ContextCompat.getColor(BaseActivity.this, R.color.yellow));
+//                ((TfTextView) findViewById(R.id.txtTitle)).setText(PrefUtils.getLanguageObj(BaseActivity.this).getProfile());
 
-                pushAddFragments(new ProfileFragment(BaseActivity.this), false, false);
+                pushAddFragments(new ContactUsFragment(BaseActivity.this));
                 break;
 
-        }*/
+        }
     }
 
     public void requestFocus(EditText editText) {
