@@ -23,12 +23,85 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/bg1" />
 
+            <LinearLayout
+                android:id="@+id/llFirst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <com.nestnfly.eventapp.custom.TfTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nest N Fly"
+                    android:layout_marginTop="@dimen/dimen_8dp"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    app:isBold="true" />
+
+
+                <com.nestnfly.eventapp.custom.TfTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Business Inovation Session"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/M_TEXT"
+                    app:isBold="true" />
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_18dp"
+                    android:layout_height="@dimen/dimen_18dp"
+                    android:layout_marginTop="@dimen/dimen_4dp"
+                    android:src="@drawable/date" />
+
+                <com.nestnfly.eventapp.custom.TfTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_4dp"
+                    android:text="February 9, 2019 TORONTO CANADA"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/N_TEXT"
+                    app:isBold="true" />
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_18dp"
+                    android:layout_height="@dimen/dimen_18dp"
+                    android:layout_marginTop="@dimen/dimen_4dp"
+                    android:src="@drawable/venue" />
+
+                <com.nestnfly.eventapp.custom.TfTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_4dp"
+                    android:text="401 Logan Ave #216 Toronto, ON M4M 2N9"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/N_TEXT"
+                    app:isBold="true" />
+            </LinearLayout>
+
+            <com.nestnfly.eventapp.custom.TfTextView
+                android:id="@+id/txtMainTitle"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_62dp"
+                android:gravity="center"
+                android:text="HOST"
+                app:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:isBold="true" />
+
             <android.support.v7.widget.CardView
                 android:id="@+id/llTimeBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="180dp"
+                android:layout_below="@+id/llFirst"
+                android:layout_marginTop="@dimen/dimen_28dp"
                 android:layout_marginRight="16dp"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -343,11 +416,11 @@
     </LinearLayout>
 
     <RelativeLayout
-        android:visibility="gone"
         android:id="@+id/llRegister"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#60000000">
+        android:background="#60000000"
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"

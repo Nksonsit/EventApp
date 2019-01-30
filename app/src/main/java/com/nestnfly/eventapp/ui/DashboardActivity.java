@@ -74,7 +74,7 @@ public class DashboardActivity extends BaseActivity {
         txtSchedule = (TfTextView) findViewById(R.id.txtSchedule);
         imgSchedule = (ImageView) findViewById(R.id.imgSchedule);
         llHost = (LinearLayout) findViewById(R.id.llHost);
-        llRegister= (RelativeLayout) findViewById(R.id.llRegister);
+        llRegister = (RelativeLayout) findViewById(R.id.llRegister);
         txtHost = (TfTextView) findViewById(R.id.txtHost);
         imgHost = (ImageView) findViewById(R.id.imgHost);
         llHome = (LinearLayout) findViewById(R.id.llHome);
@@ -90,14 +90,26 @@ public class DashboardActivity extends BaseActivity {
         imgRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                isDialogOpen = true;
                 loadBottomUI(0);
             }
         });
         imgCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadBottomUI(CURRENT_FRAGMENT+1);
+                isDialogOpen = false;
+                updateBottomUI(CURRENT_FRAGMENT + 1);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (isDialogOpen) {
+            isDialogOpen = false;
+            updateBottomUI(CURRENT_FRAGMENT + 1);
+        } else {
+            super.onBackPressed();
+        }
     }
 }
